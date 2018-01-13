@@ -1,0 +1,10 @@
+/usr/lib/lv2/lv2core.lv2/lv2core.doap.ttl
+/usr/lib/lv2/lv2core.lv2/lv2core.ttl
+/usr/lib/lv2/schemas.lv2/dcs.ttl
+/usr/lib/lv2/schemas.lv2/dct.ttl
+/usr/lib/lv2/schemas.lv2/doap.ttl
+/usr/lib/lv2/schemas.lv2/foaf.ttl
+/usr/lib/lv2/schemas.lv2/owl.ttl
+/usr/lib/lv2/schemas.lv2/rdf.ttl
+/usr/lib/lv2/schemas.lv2/rdfs.ttl
+/usr/lib/lv2/schemas.lv2/xsd.ttl
