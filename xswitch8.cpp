@@ -35,8 +35,8 @@ enum xs_port_t {
 };
 
 struct xs_state_t {
-	const float  *inputs[16];
-	float        *output_L;
+  const float  *inputs[16];
+  float        *output_L;
   float        *output_R;
   const float  *selection;
 };
@@ -48,7 +48,7 @@ xs_instantiate(
   const char *bundle_path,
   const LV2_Feature * const *features)
 {
-	return (LV2_Handle) (struct xs_state_t *) calloc(1, sizeof(struct xs_state_t));
+  return (LV2_Handle) (struct xs_state_t *) calloc(1, sizeof(struct xs_state_t));
 }
 
 static void
@@ -57,9 +57,9 @@ xs_connect_port(
   uint32_t port,
   void *data)
 {
-	xs_state_t *state = (xs_state_t *) instance;
+  xs_state_t *state = (xs_state_t *) instance;
 
-	switch ((enum xs_port_t) port) {
+  switch ((enum xs_port_t) port) {
     case XS_INPUT_0L:
     case XS_INPUT_0R:
     case XS_INPUT_1L:
@@ -96,7 +96,7 @@ xs_connect_port(
       state->selection = (const float *) data;
       break;
     }
-	}
+  }
 }
 
 static void
@@ -132,10 +132,10 @@ xs_run(
   float *output_L = state->output_L;
   float *output_R = state->output_R;
 
-	for (uint32_t pos = 0; pos < n_samples; pos++) {
+  for (uint32_t pos = 0; pos < n_samples; pos++) {
     output_L[pos] = input_L[pos];
     output_R[pos] = input_R[pos];
-	}
+  }
 }
 
 static void
@@ -149,26 +149,26 @@ static void
 xs_cleanup(
   LV2_Handle instance)
 {
-	free(instance);
+  free(instance);
 }
 
 static const void *
 xs_extension_data(
   const char *uri)
 {
-	return NULL;
+  return NULL;
 }
 
 static const LV2_Descriptor xs_descriptor =
 {
-	XS_URI_QUOTED,
-	xs_instantiate,
-	xs_connect_port,
-	xs_activate,
-	xs_run,
-	xs_deactivate,
-	xs_cleanup,
-	xs_extension_data
+  XS_URI_QUOTED,
+  xs_instantiate,
+  xs_connect_port,
+  xs_activate,
+  xs_run,
+  xs_deactivate,
+  xs_cleanup,
+  xs_extension_data
 };
 
 extern "C" {
@@ -178,10 +178,10 @@ const LV2_Descriptor*
 lv2_descriptor(
   uint32_t index)
 {
-	switch (index) {
-	  case 0:  return &xs_descriptor;
-	  default: return NULL;
-	}
+  switch (index) {
+    case 0:  return &xs_descriptor;
+    default: return NULL;
+  }
 }
 
 };
