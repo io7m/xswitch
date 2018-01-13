@@ -3,15 +3,12 @@ xswitch
 
 ```
 # Pick your C++ compiler
-#
-
 $ echo clang++ > conf-c++
 
 # Pick the right dynamic library suffix for your platform
 #   Linux: so
 #   macOS: dylib
 #   Windows: dll
-
 $ echo so > conf-sosuffix
 
 # Build the code
